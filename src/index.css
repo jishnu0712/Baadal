@@ -27,3 +27,9 @@ button{
   border-radius: 15px;
   padding: 10px;
 }
+
+/* weather */
+.WeatherComponent{
+
+  text-align: center;
+}
