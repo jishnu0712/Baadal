@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 import Weather from "./components/Weather";
+import Input from "./components/Input";
 
 function App() {
 
@@ -9,7 +10,7 @@ function App() {
 
   function handleSubmit(event) {
     event.preventDefault()
-    
+
     setCity({ cityName: formData, showWeather: true })
   }
 
@@ -20,21 +21,13 @@ function App() {
   return (
     <>
       <Navbar />
-
-      <div className={(!city.showWeather) ? "Input-box" : ""}>
-        <form className={(!city.showWeather) ? "form-input form-input-shadow" : "form-input"}
-          onSubmit={handleSubmit}>
-          <input
-            type="text"
-            placeholder="Enter City Name"
-            onChange={handleChange}
-            value={formData}
-          />
-          <button>Submit</button>
-        </form>
-      </div>
-
-      {city.showWeather && <Weather city={city.cityName}/> }
+      <Input
+        showWeather={city.showWeather}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+        formData={formData}
+      />
+      {city.showWeather && <Weather city={city.cityName} />}
     </>
   );
 }

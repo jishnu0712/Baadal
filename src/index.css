@@ -4,6 +4,7 @@
 body {
   margin: 0;
   background-color: #dcdede;
+  
 }
 
 .Navbar {
@@ -48,16 +49,30 @@ button {
   border-radius: 15px;
   padding: 10px;
 }
+/* loader */
+.loader {
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+
+  display: flex; /* ADD */
+  flex-direction: column; /* ADD */
+  align-items: center;
+  margin: auto;
+  justify-content: center;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 /* 
 weather component */
 
-.weather-card {
-  /* Add shadows to create the "card" effect */
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-  text-align: center;
-  display: flex;
-}
+
 
 /* On mouse-over, add a deeper shadow */
 .weather-card:hover {
@@ -68,16 +83,21 @@ weather component */
 .container {
   padding: 2px 16px;
   display: flex;
-
 }
 .weather-card {
   background-color: white;
 
   width: 25%;
   font-size: 12px;
-  flex: 0 0 auto; /* ADD */
+
+  
   display: flex; /* ADD */
   flex-direction: column; /* ADD */
+  align-items: center;
+  margin: auto;
+  justify-content: center;
 
-
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  text-align: center;
 }

@@ -1,7 +1,8 @@
 import React from "react";
+import WeatherCard from "./WeatherCard";
 
 export default function Weather(props) {
-    const [weatherData, setWeatherData] = React.useState({ fetched: false });
+    const [weatherData, setWeatherData] = React.useState({ fetched: false, loader: false });
 
     // fetch weather from API
     React.useEffect(() => {
@@ -13,27 +14,32 @@ export default function Weather(props) {
 
         const URL = "https://api.openweathermap.org/data/2.5/weather?appid="
             + apiKey + "&q=" + cityName + "&units=" + unit + "";
-
+        //setLoader before fetch
+        setWeatherData((prev) => {
+            return {
+                ...prev,
+                loader: true,
+            }
+        })
         fetch(URL)
             .then(response => response.json())
             .then(data => {
-                setWeatherData({ ...data, fetched: true });
+                setWeatherData({ ...data, fetched: true, loader: false });
+                //resetLoader
             });
+
     }, [props.city])
 
     return (
-        <div className="container">
-            <div className="weather-card">
-                {weatherData.fetched && <img
-                    src={"http://openweathermap.org/img/wn/" 
-                    + weatherData?.weather?.[0]?.icon + "@2x.png"}
-                    alt="icon"
-                    className="weather-icon" />}
-                <h2>{weatherData?.name}</h2>
-                <h1>{weatherData?.weather?.[0]?.description}</h1>
-                <h1>{weatherData?.main?.temp_max}°C</h1>
+        <>
+            {weatherData.loader && <div className="loader"></div>}
+            <div className="container">
+
+                <WeatherCard
+                    weatherData={weatherData}
+                />
 
             </div>
-        </div>
+        </>
     )
 }
