@@ -1,22 +1,41 @@
 body {
   margin: 0;
-  
 }
-
-.Navbar {
-  background-color: black;
-  padding: 10px;
-}
-li{
-  display: inline;
-  color: white;
-  padding: 0 40px;
-}
-ul{
+h1{
+  margin: 0;
   padding: 0;
+}
+.Navbar {
+  display: flex;
+  align-items: center;
+  height: 65px;
+  background-color: black;
+  color: white;
+  padding: 15px 20px;
+}
+.nav-Img{
+  height: 100%;
+  margin-right: 6px;
 }
 .Main{
   text-align: center;
+}
+.Main {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  height: 720px;
+}
+
+.form-input {
+  margin: auto;
+  width: 50%;
+  border: 3px solid green;
+  padding: 10px;
+
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 input{
   border-radius: 15px;
@@ -33,3 +52,4 @@ button{
 
   text-align: center;
 }
+

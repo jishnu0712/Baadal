@@ -1,20 +1,20 @@
 import React from "react";
-import Navbar from "./components/Navbar"
-import Main from "./components/Main"
-import Weather from "./components/Weather"
+import Navbar from "./components/Navbar";
+import Main from "./components/Input";
+import Weather from "./components/Weather";
 
 
 
 function App() {
 
-  const [formData, setFormData] = React.useState({input: "", weather: false,});
-  
+  const [formData, setFormData] = React.useState({ input: "", weather: false, });
+
 
   function handleSubmit(event) {
     event.preventDefault()
 
     // console.log(formData);
-    setFormData((prev)=> {
+    setFormData((prev) => {
       return {
         ...prev,
         weather: true,
@@ -24,7 +24,7 @@ function App() {
   }
 
   function handleChange(event) {
-    setFormData((prev) => {return {...prev, input: [event.target.value]}})
+    setFormData((prev) => { return { ...prev, input: [event.target.value] } })
   }
 
   return (
@@ -34,8 +34,10 @@ function App() {
         handleChange={handleChange}
         handleSubmit={handleSubmit}
         value={formData.input}
+        weather = {formData.weather}
       />
-      {formData.weather && <Weather city={formData.input}/>}
+
+      {formData.weather && <Weather city={formData.input} />}
     </>
   );
 }

@@ -14,10 +14,11 @@ export default function Weather(props) {
         fetch(URL)
             .then(response => response.json())
             .then(data => setWeatherData(data));
-    },[])
+    },[props.city])
     
     return (
         <div className="WeatherComponent">
+            <h1>{weatherData?.main?.temp_max}Deg Cel</h1>
             <pre>{JSON.stringify(weatherData, null, 2)}</pre>
 
         </div>

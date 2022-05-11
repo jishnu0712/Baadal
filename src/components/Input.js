@@ -1,10 +1,10 @@
 import React from "react";
 
-export default function Main(props) {
+export default function Input(props) {
     return (
-        <div className="Main">
-            <form className="form" 
-            onSubmit={props.handleSubmit}>
+        <div className={(!props.weather) ? "Main" : ""}>
+            <form className="form-input"
+                onSubmit={props.handleSubmit}>
 
                 <input
                     type="text"
@@ -12,7 +12,7 @@ export default function Main(props) {
                     onChange={props.handleChange}
                     value={props.value}
                 />
-                
+
                 <button>Submit</button>
             </form>
         </div>
