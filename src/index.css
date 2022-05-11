@@ -3,6 +3,7 @@
 }
 body {
   margin: 0;
+  background-color: #dcdede;
 }
 
 .Navbar {
@@ -66,18 +67,17 @@ weather component */
 /* Add some padding inside the card container */
 .container {
   padding: 2px 16px;
+  display: flex;
+
 }
 .weather-card {
-  display: flex;
-  flex-wrap: nowrap;
-  gap: 20px;
-  overflow-x: auto;
-  text-align: center;
+  background-color: white;
 
   width: 25%;
   font-size: 12px;
   flex: 0 0 auto; /* ADD */
   display: flex; /* ADD */
   flex-direction: column; /* ADD */
-  position: relative;
+
+
 }

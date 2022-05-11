@@ -17,19 +17,22 @@ export default function Weather(props) {
         fetch(URL)
             .then(response => response.json())
             .then(data => {
-                setWeatherData({...data,fetched:true});
+                setWeatherData({ ...data, fetched: true });
             });
     }, [props.city])
 
     return (
-        <div className="weather-card">
-            <div className="container">
+        <div className="container">
+            <div className="weather-card">
                 {weatherData.fetched && <img
-                    src={"http://openweathermap.org/img/wn/" + weatherData?.weather[0]?.icon + "@2x.png"}
+                    src={"http://openweathermap.org/img/wn/" 
+                    + weatherData?.weather?.[0]?.icon + "@2x.png"}
                     alt="icon"
                     className="weather-icon" />}
-                <h1>{weatherData?.main?.temp_max}Deg Cel</h1>
-                <pre>{JSON.stringify(weatherData, null, 2)}</pre>
+                <h2>{weatherData?.name}</h2>
+                <h1>{weatherData?.weather?.[0]?.description}</h1>
+                <h1>{weatherData?.main?.temp_max}°C</h1>
+
             </div>
         </div>
     )
