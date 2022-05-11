@@ -1,10 +1,10 @@
+* {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
 }
-h1{
-  margin: 0;
-  padding: 0;
-}
+
 .Navbar {
   display: flex;
   align-items: center;
@@ -13,43 +13,71 @@ h1{
   color: white;
   padding: 15px 20px;
 }
-.nav-Img{
+.nav-Img {
   height: 100%;
   margin-right: 6px;
 }
-.Main{
+/* Input component */
+.Input-box {
   text-align: center;
-}
-.Main {
   display: flex;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
   height: 720px;
 }
 
 .form-input {
+  border-radius: 25px;
   margin: auto;
   width: 50%;
   border: 3px solid green;
   padding: 10px;
-
+}
+.form-input-shadow {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
-input{
+input {
   border-radius: 15px;
   padding: 10px;
 }
-button{
+button {
   background-color: cadetblue;
   border-radius: 15px;
   padding: 10px;
 }
+/* 
+weather component */
 
-/* weather */
-.WeatherComponent{
-
+.weather-card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
   text-align: center;
+  display: flex;
 }
 
+/* On mouse-over, add a deeper shadow */
+.weather-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 2px 16px;
+}
+.weather-card {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  overflow-x: auto;
+  text-align: center;
+
+  width: 25%;
+  font-size: 12px;
+  flex: 0 0 auto; /* ADD */
+  display: flex; /* ADD */
+  flex-direction: column; /* ADD */
+  position: relative;
+}
