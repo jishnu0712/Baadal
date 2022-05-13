@@ -11,7 +11,6 @@ export default function Navbar() {
                 <input
                     type="text"
                     placeholder="Enter city"
-
                 />
                 <button>search</button>
             </div>
