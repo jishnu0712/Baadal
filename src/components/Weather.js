@@ -31,15 +31,15 @@ export default function Weather(props) {
     }, [props.city])
 
     return (
-        <>
+        <div className="weather-container">
             {weatherData.loader && <div className="loader"></div>}
-            <div className="container">
 
-                <WeatherCard
-                    weatherData={weatherData}
-                />
 
-            </div>
-        </>
+            {!weatherData.loader && <WeatherCard
+                weatherData={weatherData}
+            />}
+
+
+        </div>
     )
 }

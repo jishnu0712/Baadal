@@ -5,6 +5,7 @@ export default function Input(props) {
         <div className={(!props.showWeather) ? "Input-box" : ""}>
             <form className={(!props.showWeather) ? "form-input form-input-shadow" : "form-input"}
                 onSubmit={props.handleSubmit}>
+                
                 <input
                     type="text"
                     placeholder="Enter City Name"

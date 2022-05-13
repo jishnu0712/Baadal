@@ -21,12 +21,12 @@ function App() {
   return (
     <>
       <Navbar />
-      <Input
+      { !city.showWeather && <Input
         showWeather={city.showWeather}
         handleChange={handleChange}
         handleSubmit={handleSubmit}
         formData={formData}
-      />
+      />}
       {city.showWeather && <Weather city={city.cityName} />}
     </>
   );

@@ -2,57 +2,83 @@
   box-sizing: border-box;
 }
 body {
+  min-height: 100vh;
   margin: 0;
   background-color: #dcdede;
-  
+  font-family: "Inter", sans-serif;
 }
-
+/* navbar */
 .Navbar {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+
   height: 65px;
   background-color: black;
   color: white;
   padding: 15px 20px;
 }
-.nav-Img {
-  height: 100%;
-  margin-right: 6px;
+.nav-brand{
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
 }
+.logo {
+  margin: 0 8px 0 0;
+  font-size: 3rem;
+  padding: 0;
+}
+.nav-title{
+  font-size: 1.5rem;
+}
+
 /* Input component */
 .Input-box {
-  text-align: center;
+  min-height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 720px;
-}
 
+  margin: auto;
+  text-align: center;
+}
 .form-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   border-radius: 25px;
   margin: auto;
-  width: 50%;
-  border: 3px solid green;
+  width: 60%;
+  min-height: 70vh;
   padding: 10px;
-}
-.form-input-shadow {
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+  background-image: 
+  url("https://www.metoffice.gov.uk/binaries/content/gallery/metofficegovuk/hero-images/weather/cloud/altocumulus.jpg");
 }
 input {
   border-radius: 15px;
   padding: 10px;
+  font-family: "Inter", sans-serif;
 }
 button {
   background-color: cadetblue;
   border-radius: 15px;
   padding: 10px;
+  font-family: "Inter", sans-serif;
 }
+
+
+.form-input-shadow {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
 /* loader */
 .loader {
   border: 16px solid #f3f3f3; /* Light grey */
-  border-top: 16px solid #3498db; /* Blue */
+  border-top: 16px solid plum; /* Blue */
   border-radius: 50%;
   width: 120px;
   height: 120px;
@@ -66,31 +92,36 @@ button {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 /* 
 weather component */
+.weather-container{
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
 
-
+  background-color: aquamarine;
+}
 /* On mouse-over, add a deeper shadow */
 .weather-card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-/* Add some padding inside the card container */
-.container {
-  padding: 2px 16px;
-  display: flex;
-}
 .weather-card {
   background-color: white;
+  padding: 10px;
 
-  width: 25%;
+  width: 300px;
   font-size: 12px;
 
-  
   display: flex; /* ADD */
   flex-direction: column; /* ADD */
   align-items: center;
