@@ -34,12 +34,9 @@ export default function Weather(props) {
         <div className="weather-container">
             {weatherData.loader && <div className="loader"></div>}
 
-
             {!weatherData.loader && <WeatherCard
                 weatherData={weatherData}
             />}
-
-
         </div>
     )
 }
