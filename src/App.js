@@ -5,13 +5,18 @@ import Input from "./components/Input";
 
 function App() {
 
-  const [formData, setFormData] = React.useState("");
-  const [city, setCity] = React.useState({ cityName: "", showWeather: false });
+  const [formData, setFormData] = React.useState(() => "");
+  const [city, setCity] = React.useState(() => { return { cityName: "", showWeather: false } });
+
+  function handleNavLogoClick() {
+    console.log("clicked");
+    setCity({ cityName: "", showWeather: false })
+  }
 
   function handleSubmit(event) {
     event.preventDefault()
 
-    setCity({ cityName: formData, showWeather: true })
+    setCity(() => { return { cityName: formData, showWeather: true } })
   }
 
   function handleChange(event) {
@@ -20,14 +25,16 @@ function App() {
 
   return (
     <>
-      <Navbar />
-      { !city.showWeather && <Input
+      <Navbar 
+        handleClick={handleNavLogoClick}
+      />
+      {!city.showWeather && <Input
         showWeather={city.showWeather}
         handleChange={handleChange}
         handleSubmit={handleSubmit}
         formData={formData}
       />}
-      {city.showWeather && <Weather city={city.cityName} />}
+      {city.showWeather && <Weather city={ city.cityName } />}
     </>
   );
 }

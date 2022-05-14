@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function Navbar() {
+export default function Navbar(props) {
     return (
         <nav className="Navbar">
-            <div className="nav-brand">
+            <div className="nav-brand" onClick={props.handleClick}>
                 <h1 className="logo">☁️</h1>
                 <h3 className="nav-title">Baadal</h3>
             </div>

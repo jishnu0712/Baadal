@@ -31,6 +31,9 @@ body {
   align-items: center;
   margin-left: 10px;
 }
+.nav-brand:hover {
+  cursor: pointer;
+}
 .logo {
   margin: 0 8px 0 0;
   font-size: 2.5rem;
@@ -59,7 +62,7 @@ body {
   margin: auto;
   width: 60%;
   max-width: 1000px;
-  
+
   min-height: 70vh;
   padding: 10px;
 
