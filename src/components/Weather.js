@@ -34,8 +34,7 @@ export default function Weather(props) {
             .catch(console.log(new Error("Err")))
 
     }, [props.city])
-
-    console.log(weatherData.daily, "w");
+    
     if (weatherData.fetched) {
          dailyWeatherWidget = weatherData?.daily.map((item) => {
             return (<WeatherCard
