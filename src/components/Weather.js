@@ -4,6 +4,7 @@ import WeatherCard from "./WeatherCard";
 export default function Weather(props) {
     const [weatherData, setWeatherData] = React.useState({ fetched: false, loader: false });
 
+    console.log(weatherData, "weather");
     // fetch weather from API
     React.useEffect(() => {
         setWeatherData((prev) => { return { ...prev, fetched: false } })
@@ -12,8 +13,9 @@ export default function Weather(props) {
         const apiKey = "323eecb3b884f86eae937878ae160d27";
         const unit = "metric";
 
-        const URL = "https://api.openweathermap.org/data/2.5/weather?appid="
-            + apiKey + "&q=" + cityName + "&units=" + unit + "";
+        const URL = `https://api.openweathermap.org/data/2.5/weather?appid=${apiKey}&q=${cityName}&units=${unit}`;
+
+
         //setLoader before fetch
         setWeatherData((prev) => {
             return {
@@ -26,7 +28,15 @@ export default function Weather(props) {
             .then(data => {
                 setWeatherData({ ...data, fetched: true, loader: false });
                 //resetLoader
-            });
+
+            })
+        // const URLOneCall = "https://api.openweathermap.org/data/2.5/onecall?lat="
+        //     + weatherData?.coord.lat + "&lon=" + weatherData?.coord.lon + "&appid=" + apiKey;
+        // fetch(URLOneCall)
+        //     .then(res => res.json)
+        //     .then(dataOneCall => {
+        //         console.log(dataOneCall);
+        //     })
 
     }, [props.city])
 
