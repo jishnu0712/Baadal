@@ -6,10 +6,11 @@ const apiKey = "323eecb3b884f86eae937878ae160d27";
 export default function Weather(props) {
     const [weatherData, setWeatherData] = React.useState(() => { return { fetched: false, loader: false } });
     let dailyWeatherWidget;
+
     // fetch weather from API
     React.useEffect(() => {
         setWeatherData((prev) => { return { ...prev, fetched: false } })
-        
+
         let cityName = props.city;
         const unit = "metric";
         const URL = `https://api.openweathermap.org/data/2.5/weather?` +
@@ -18,7 +19,7 @@ export default function Weather(props) {
         //setLoader before fetch
         setWeatherData((prev) => { return { ...prev, loader: true, } });
 
-        fetch(URL)
+        fetch(URL) //get lat & lon from cityName
             .then(response => response.json())
             .then(data => {
                 const URLOneCall = `https://api.openweathermap.org/data/2.5/onecall?lat=` +
@@ -30,7 +31,8 @@ export default function Weather(props) {
             .then(data => {
                 //resetLoader
                 setWeatherData({ ...data, fetched: true, loader: false });
-            })
+            }, (err) => console.log(err.text))
+
         //not working
         // , (err) => {
         //     console.log(err);
@@ -54,7 +56,6 @@ export default function Weather(props) {
             />)
         });
     }
-
 
     return (
         <div className="weather-container">

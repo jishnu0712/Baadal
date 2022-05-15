@@ -4,7 +4,7 @@ import Weather from "./components/Weather";
 import Input from "./components/Input";
 import "./App.css";
 
-function App() {
+export default function App() {
 
   const [formData, setFormData] = React.useState(() => "");
   const [city, setCity] = React.useState(() => { return { cityName: "", showWeather: false } });
@@ -13,9 +13,9 @@ function App() {
     setFormData("");
     setCity({ cityName: "", showWeather: false });
   }
-  function handleNavLogoClick() {
-    console.log("clicked");
-    setCity({ cityName: "", showWeather: false });
+
+  function handleNavLogoClick() { //reset states
+    resetStates();
   }
 
   function handleSubmit(event) {
@@ -24,8 +24,9 @@ function App() {
     setCity(() => { return { cityName: formData, showWeather: true } });
   }
 
-  function handleChange(event) {
+  function handleChange(event) { //input data from form
     setFormData(() => event.target.value);
+    
   }
 
   return (
@@ -35,6 +36,7 @@ function App() {
         showWeather={city.showWeather}
         handleChange={handleChange}
         handleSubmit={handleSubmit}
+        value={formData}
       />
 
       {!city.showWeather && <Input
@@ -48,5 +50,3 @@ function App() {
     </>
   );
 }
-
-export default App;

@@ -8,13 +8,16 @@ export default function Navbar(props) {
                 <h3 className="nav-title">Baadal</h3>
             </div>
             {props.showWeather && <div className="search-bar">
-                <input
-                    className="nav-input"
-                    type="text"
-                    placeholder="City..."
-                    onChange={props.handleChange}
-                />
-                <button className="nav-button" onClick={props.handleSubmit}>🔍</button>
+                <form onSubmit={props.handleSubmit}>
+                    <input
+                        className="nav-input"
+                        type="text"
+                        placeholder="City..."
+                        value={props.value}
+                        onChange={props.handleChange}
+                    />
+                    <button className="nav-button" onClick={props.handleSubmit}>🔍</button>
+                </form>
             </div>}
         </nav>
     )
