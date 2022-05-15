@@ -12,8 +12,9 @@ export default function Navbar(props) {
                     className="nav-input"
                     type="text"
                     placeholder="Enter city"
+                    onChange={props.handleChange}
                 />
-                <button className="nav-button">🔍</button>
+                <button className="nav-button" onClick={props.handleSubmit}>🔍</button>
             </div>}
         </nav>
     )

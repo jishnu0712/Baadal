@@ -28,6 +28,8 @@ function App() {
       <Navbar
         handleClick={handleNavLogoClick}
         showWeather={city.showWeather}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
       />
       {!city.showWeather && <Input
         showWeather={city.showWeather}
