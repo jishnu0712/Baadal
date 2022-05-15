@@ -76,6 +76,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 
   border-radius: 25px;
   margin: auto;
@@ -90,7 +91,7 @@ body {
 .form-input .main-input {
   border-radius: 15px;
   padding: 10px 20px;
-  width: 40%;
+  width: 30%;
   font-family: "Inter", sans-serif;
   margin: 5px;
 

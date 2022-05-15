@@ -9,11 +9,11 @@ export default function Input(props) {
                 <input
                 className="main-input"
                     type="text"
-                    placeholder="Enter City Name"
+                    placeholder="City..."
                     onChange={props.handleChange}
                     value={props.formData}
                 />
-                <button>Submit</button>
+                <button>Get Weather</button>
             </form>
         </div>
     )
