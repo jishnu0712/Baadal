@@ -2,8 +2,8 @@ import React from "react";
 
 export default function Input(props) {
     return (
-        <div className={(!props.showWeather) ? "Input-box" : ""}>
-            <form className={(!props.showWeather) ? "form-input form-input-shadow" : "form-input"}
+        <div className={"Input-box"}>
+            <form className={"form-input form-input-shadow"}
                 onSubmit={props.handleSubmit}>
                 
                 <input
