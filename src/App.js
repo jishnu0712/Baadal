@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "./components/Navbar";
 import Weather from "./components/Weather";
 import Input from "./components/Input";
+import "./App.css";
 
 function App() {
 
@@ -14,17 +15,17 @@ function App() {
   }
   function handleNavLogoClick() {
     console.log("clicked");
-    setCity({ cityName: "", showWeather: false })
+    setCity({ cityName: "", showWeather: false });
   }
 
   function handleSubmit(event) {
-    event.preventDefault()
+    event.preventDefault();
 
-    setCity(() => { return { cityName: formData, showWeather: true } })
+    setCity(() => { return { cityName: formData, showWeather: true } });
   }
 
   function handleChange(event) {
-    setFormData(() => event.target.value)
+    setFormData(() => event.target.value);
   }
 
   return (
@@ -35,12 +36,14 @@ function App() {
         handleChange={handleChange}
         handleSubmit={handleSubmit}
       />
+
       {!city.showWeather && <Input
         showWeather={city.showWeather}
         handleChange={handleChange}
         handleSubmit={handleSubmit}
         formData={formData}
       />}
+
       {city.showWeather && <Weather city={city.cityName} resetStates={resetStates}/>}
     </>
   );
