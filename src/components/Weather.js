@@ -34,10 +34,11 @@ export default function Weather(props) {
             .catch(console.log(new Error("Err")))
 
     }, [props.city])
-    
+
     if (weatherData.fetched) {
          dailyWeatherWidget = weatherData?.daily.map((item) => {
             return (<WeatherCard
+                key={item.dt}
                 date={item.dt}
                 fetched={weatherData.fetched}
                 icon={item.weather[0].icon}
