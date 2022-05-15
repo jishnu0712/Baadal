@@ -81,7 +81,7 @@ body {
 
   border-radius: 25px;
   margin: auto;
-  width: 60%;
+  width: 85%;
   max-width: 1000px;
 
   min-height: 70vh;
@@ -93,6 +93,7 @@ body {
   border-radius: 15px;
   padding: 10px 20px;
   width: 30%;
+  min-width: 100px;
   font-family: "Inter", sans-serif;
   margin: 5px;
 
