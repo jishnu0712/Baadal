@@ -25,8 +25,9 @@ function App() {
 
   return (
     <>
-      <Navbar 
+      <Navbar
         handleClick={handleNavLogoClick}
+        showWeather={city.showWeather}
       />
       {!city.showWeather && <Input
         showWeather={city.showWeather}
@@ -34,7 +35,7 @@ function App() {
         handleSubmit={handleSubmit}
         formData={formData}
       />}
-      {city.showWeather && <Weather city={ city.cityName } />}
+      {city.showWeather && <Weather city={city.cityName} />}
     </>
   );
 }

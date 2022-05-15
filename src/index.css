@@ -74,10 +74,14 @@ body {
   width: 40%;
   font-family: "Inter", sans-serif;
   margin: 5px;
+
+  display: flex;
+  flex-wrap: wrap;
+
 }
 input {
   border-radius: 15px;
-  padding: 10px;
+  padding: 10px 0;
 
   font-family: "Inter", sans-serif;
   margin: 5px;
@@ -136,22 +140,24 @@ weather component */
 
 .weather-card {
   background-color: var(--lightest-grey);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 20px;
-  padding: 0 100px;
-  width: 10%;
-  min-width: 100px;
+  padding: 0 10px;
+
+  min-width: 110px;
   
   font-size: 12px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: auto 10px;
+  margin: 10px 10px;
   justify-content: center;
 
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  
   transition: 0.3s;
   text-align: center;
+  width: 10%;
 }
 .temp{
   font-size: 1rem;
