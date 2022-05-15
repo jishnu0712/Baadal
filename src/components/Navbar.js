@@ -9,10 +9,11 @@ export default function Navbar(props) {
             </div>
             {props.showWeather && <div className="search-bar">
                 <input
+                    className="nav-input"
                     type="text"
                     placeholder="Enter city"
                 />
-                <button>🔍</button>
+                <button className="nav-button">🔍</button>
             </div>}
         </nav>
     )

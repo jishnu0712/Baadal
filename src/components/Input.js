@@ -7,6 +7,7 @@ export default function Input(props) {
                 onSubmit={props.handleSubmit}>
                 
                 <input
+                className="main-input"
                     type="text"
                     placeholder="Enter City Name"
                     onChange={props.handleChange}
