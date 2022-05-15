@@ -8,6 +8,10 @@ function App() {
   const [formData, setFormData] = React.useState(() => "");
   const [city, setCity] = React.useState(() => { return { cityName: "", showWeather: false } });
 
+  function resetStates() {
+    setFormData("");
+    setCity({ cityName: "", showWeather: false });
+  }
   function handleNavLogoClick() {
     console.log("clicked");
     setCity({ cityName: "", showWeather: false })
@@ -37,7 +41,7 @@ function App() {
         handleSubmit={handleSubmit}
         formData={formData}
       />}
-      {city.showWeather && <Weather city={city.cityName} />}
+      {city.showWeather && <Weather city={city.cityName} resetStates={resetStates}/>}
     </>
   );
 }

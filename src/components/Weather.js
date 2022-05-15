@@ -31,12 +31,17 @@ export default function Weather(props) {
                 //resetLoader
                 setWeatherData({ ...data, fetched: true, loader: false });
             })
-            .catch(console.log(new Error("Err")))
+        //not working
+        // , (err) => {
+        //     console.log(err);
+        //     alert("Location not found, please enter without space");
+        //     props.resetStates();
+        // })
 
     }, [props.city])
 
     if (weatherData.fetched) {
-         dailyWeatherWidget = weatherData?.daily.map((item) => {
+        dailyWeatherWidget = weatherData?.daily.map((item) => {
             return (<WeatherCard
                 key={item.dt}
                 date={item.dt}
