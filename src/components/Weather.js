@@ -3,23 +3,25 @@ import WeatherCard from "./WeatherCard";
 
 const apiKey = "323eecb3b884f86eae937878ae160d27";
 
+let loader=false;
+
 export default function Weather(props) {
     const [weatherData, setWeatherData] = React.useState(() => { return { fetched: false, loader: false } });
     let dailyWeatherWidget;
-    
+
 
     // fetch weather from API
     React.useEffect(() => {
-        setWeatherData((prev) => { return { ...prev, fetched: false } })
-
         let cityName = props.city.trim();
         cityName = cityName[0].toUpperCase() + cityName.slice(1);
         const unit = "metric";
         const URL = `https://api.openweathermap.org/data/2.5/weather?` +
             `appid=${apiKey}&q=${cityName}&units=${unit}`;
-        console.log(URL);
+
         //setLoader before fetch
-        setWeatherData((prev) => { return { ...prev, loader: true, } });
+        // setWeatherData((prev) => { return { ...prev, loader: true, } });
+        loader=true;
+
 
         fetch(URL) //get lat & lon from cityName
             .then(response => response.json())
@@ -28,6 +30,7 @@ export default function Weather(props) {
                     const URLOneCall = `https://api.openweathermap.org/data/2.5/onecall?lat=` +
                         `${data?.coord?.lat}&lon=${data?.coord?.lon}&units=${unit}&appid=${apiKey}`
                         + `&exclude=minutely,hourly,alerts`;
+                    console.log(URLOneCall);
                     return fetch(URLOneCall)
                 }
                 throw (new Error("err"))
@@ -36,11 +39,13 @@ export default function Weather(props) {
             .then(data => {
                 //resetLoader
                 setWeatherData({ ...data, fetched: true, loader: false });
+                loader=false;
             })
-            .catch((err) => { 
+            .catch((err) => {
                 alert("City Name not found.. try again");
                 props.resetStates();
             })
+
 
     }, [props.city])
 
@@ -61,9 +66,9 @@ export default function Weather(props) {
 
     return (
         <div className="weather-container">
-            {weatherData.loader && <div className="loader"></div>}
+            {loader && <div className="loader"></div>}
 
-            {!weatherData.loader && dailyWeatherWidget}
+            {!loader && dailyWeatherWidget}
         </div>
     )
 }
