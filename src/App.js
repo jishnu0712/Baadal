@@ -26,7 +26,6 @@ export default function App() {
 
   function handleChange(event) { //input data from form
     setFormData(() => event.target.value);
-    
   }
 
   return (
