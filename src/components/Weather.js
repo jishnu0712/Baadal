@@ -43,7 +43,7 @@ export default function Weather(props) {
             })
             .catch((err) => {
                 alert("City Name not found.. try again");
-                props.resetStates();
+                
             })
 
 
