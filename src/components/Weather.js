@@ -10,7 +10,7 @@ export default function Weather(props) {
     let dailyWeatherWidget;
 
 
-    // fetch weather from API
+    // fetch  from API
     React.useEffect(() => {
         let cityName = props.city.trim();
         cityName = cityName[0].toUpperCase() + cityName.slice(1);
@@ -43,7 +43,7 @@ export default function Weather(props) {
             })
             .catch((err) => {
                 alert("City Name not found.. try again");
-                
+                props.resetStates();
             })
 
 
