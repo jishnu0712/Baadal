@@ -20,7 +20,6 @@ export default function App() {
 
   function handleSubmit(event) {
     event.preventDefault();
-
     setCity(() => { return { cityName: formData, showWeather: true } });
   }
 
