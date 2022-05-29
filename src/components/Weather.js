@@ -5,7 +5,7 @@ const apiKey = "323eecb3b884f86eae937878ae160d27";
 
 export default function Weather({ city, resetStates }) {
     const [weatherData, setWeatherData] = React.useState(() => {
-        return { fetched: false, loader: false }
+        return { daily: [], fetched: false, loader: false }
     });
     let dailyWeatherWidget;
 
@@ -16,30 +16,36 @@ export default function Weather({ city, resetStates }) {
         const unit = "metric";
         const URL = `https://api.openweathermap.org/data/2.5/weather?` +
             `appid=${apiKey}&q=${cityName}&units=${unit}`;
-
+        
         //setLoader before fetch
-        setWeatherData(prev => ({...prev,loader:true}))
-
-        fetch(URL) //get lat & lon from cityName
-            .then(response => response.json())
-            .then(data => {
+        setWeatherData(prev => ({ ...prev, loader: true }));
+        async function fetchWeather() {
+            try {
+                const response = await fetch(URL); //API to get lat & lon
+                if (!response.ok) {
+                    throw Error('Network error')
+                }
+                const data = await response.json();
                 if (data.cod !== 200) {
-                    throw (new Error("city"))
+                    throw Error('city not found');
                 }
                 const URLOneCall = `https://api.openweathermap.org/data/2.5/onecall?lat=` +
                     `${data?.coord?.lat}&lon=${data?.coord?.lon}&units=${unit}&appid=${apiKey}`
                     + `&exclude=minutely,hourly,alerts`;
-                return fetch(URLOneCall)
-            })
-            .then(response => response.json())
-            .then(data => {
-                //resetLoader
-                setWeatherData({ ...data, fetched: true, loader: false });
-            })
-            .catch((err) => {
-                alert('city name not found');
+                const URLOneCallResponse = await fetch(URLOneCall); //get weekly weather
+                if (!URLOneCallResponse.ok) {
+                    throw Error('URL one call API error');
+                }
+                const dataURLOneCall = await URLOneCallResponse.json();
+                
+                setWeatherData({ daily: dataURLOneCall.daily, fetched: true, loader: false });
+            } catch (err) {
+                alert(err.message);
                 resetStates();
-            })
+            }
+        }
+        fetchWeather();
+
     }, [city])
 
     if (weatherData.fetched) {

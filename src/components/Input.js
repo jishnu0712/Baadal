@@ -13,7 +13,7 @@ export default function Input(props) {
                     onChange={props.handleChange}
                     value={props.formData}
                 />
-                <button>Get Weather</button>
+                <button onClick={props.handleSubmit}>Get Weather</button>
             </form>
         </div>
     )
