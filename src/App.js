@@ -20,7 +20,10 @@ export default function App() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    setCity(() => { return { cityName: formData, showWeather: true } });
+    if(formData === ''){
+      return
+    }
+    setCity(() => ({ cityName: formData, showWeather: true }));
   }
 
   function handleChange(event) { //input data from form
@@ -44,7 +47,7 @@ export default function App() {
         formData={formData}
       />}
 
-      {city.showWeather && <Weather city={city.cityName} resetStates={resetStates}/>}
+      {city.showWeather && <Weather city={city.cityName} resetStates={resetStates} />}
     </>
   );
 }
