@@ -30,7 +30,7 @@ export default function Weather({ city, resetStates }) {
         const URL = `https://api.openweathermap.org/data/2.5/weather?` +
             `appid=${apiKey}&q=${cityName}&units=${unit}`;
 
-        //setLoader before fetch
+        //setLoader before  fetch
         setWeatherData(prev => ({ ...prev, loader: true }));
         async function fetchWeather() {
             try {
