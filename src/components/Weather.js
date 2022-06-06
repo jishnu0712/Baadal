@@ -53,7 +53,7 @@ export default function Weather({ city, resetStates }) {
 
                 setWeatherData({ daily: dataURLOneCall.daily, fetched: true, loader: false });
             } catch (err) {
-                setWeatherData({ ...weatherData, error: true, errorMsg: err.message })
+                setWeatherData(prev => ({ ...prev, error: true, errorMsg: err.message }))
             }
         }
         fetchWeather();
