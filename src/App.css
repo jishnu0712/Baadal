@@ -7,7 +7,7 @@
 }
 
 .canvas {
-  background-color: #ccc ;
+  background-color: #ccc;
   min-height: 90vh;
   display: flex;
   align-items: center;
@@ -40,7 +40,7 @@
   padding: 0;
 }
 .nav-title {
-  font-family: 'Permanent Marker', cursive;
+  font-family: "Permanent Marker", cursive;
   font-size: 2rem;
 }
 .search-bar {
@@ -54,6 +54,12 @@
   margin: 5px;
   width: 60%;
   min-width: 75px;
+}
+.nav-search-btn {
+  background-color: #fdfdfd;
+  border-radius: 2px;
+  padding: 8px 5px;
+  margin: 5px;
 }
 
 /* Input component */

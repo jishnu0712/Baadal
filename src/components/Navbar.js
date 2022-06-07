@@ -18,7 +18,7 @@ export default function Navbar(props) {
                         value={props.value}
                         onChange={props.handleChange}
                     />
-                    <Button variant='contained'color="primary" onClick={props.handleSubmit}>🔍</Button>
+                    <button className="nav-search-btn" onClick={props.handleSubmit}>🔍</button>
                 </form>
             </div>}
         </nav>
