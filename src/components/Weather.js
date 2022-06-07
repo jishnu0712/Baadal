@@ -38,7 +38,7 @@ export default function Weather({ city, resetStates }) {
         const unit = "metric";
 
         const URL = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=${apiKey}`;
-        //setLoader before  fetch
+        //setLoader before fetch
         setWeatherData(prev => ({ ...prev, loader: true }));
         async function fetchWeather() {
             try {
