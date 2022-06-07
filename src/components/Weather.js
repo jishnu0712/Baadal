@@ -37,7 +37,7 @@ export default function Weather({ city, resetStates }) {
         cityName = cityName[0].toUpperCase() + cityName.slice(1);
         const unit = "metric";
 
-        const URL = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=${apiKey}`;
+        const URL = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&appid=${apiKey}`;
         //setLoader before fetch
         setWeatherData(prev => ({ ...prev, loader: true }));
         async function fetchWeather() {
