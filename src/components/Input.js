@@ -2,11 +2,9 @@ import React from "react";
 import { Button } from '@mui/material';
 
 export default function Input(props) {
-    //const classes = useStyles()
     return (
         <div className={"canvas"}>
-            <div className={"form-input"} //remove
-            // onSubmit={props.handleSubmit}
+            <div className={"form-input"}
             >
                 <input
                     className="main-input"

@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Button } from '@mui/material/';
 
 
 export default function Navbar(props) {
@@ -18,7 +18,7 @@ export default function Navbar(props) {
                         value={props.value}
                         onChange={props.handleChange}
                     />
-                    <button className="nav-button" onClick={props.handleSubmit}>🔍</button>
+                    <Button variant='contained'color="primary" onClick={props.handleSubmit}>🔍</Button>
                 </form>
             </div>}
         </nav>
