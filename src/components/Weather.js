@@ -1,6 +1,6 @@
 import React from "react";
 import WeatherCard from "./WeatherCard";
-import { Modal, Box, Typography } from '@mui/material/';
+import { Button,Modal, Box, Typography } from '@mui/material/';
 
 const style = { //modal style
     position: 'absolute',
@@ -113,6 +113,9 @@ export default function Weather({ city, resetStates }) {
                     <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                         {weatherData.errorMsg}
                     </Typography>
+                    <Button variant="contained" color="primary" onClick={resetStates}>
+                        Retry
+                    </Button>
                 </Box>
             </Modal>
             {weatherData.loader && <div className="loader"></div>}
