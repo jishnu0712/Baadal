@@ -20,7 +20,7 @@ export default function App() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    if(formData === ''){
+    if(formData.trim() === ''){
       return
     }
     setCity(() => ({ cityName: formData, showWeather: true }));
