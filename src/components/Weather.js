@@ -1,13 +1,13 @@
 import React from "react";
 import WeatherCard from "./WeatherCard";
-import { Button,Modal, Box, Typography } from '@mui/material/';
+import { Button, Modal, Box, Typography } from '@mui/material/';
 
 const style = { //modal style
     position: 'absolute',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 400,
+    width: 300,
     bgcolor: 'background.paper',
     border: '2px solid #000',
     boxShadow: 24,
@@ -110,10 +110,14 @@ export default function Weather({ city, resetStates }) {
                     <Typography id="modal-modal-title" variant="h6" component="h2">
                         Oops!
                     </Typography>
-                    <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                        {weatherData.errorMsg}
-                    </Typography>
-                    <Button variant="contained" color="primary" onClick={resetStates}>
+
+                    {weatherData.errorMsg}
+
+                    <Button
+                        variant="outlined"
+                        color="primary"
+                        onClick={resetStates}
+                        sx={{ color: "orange", m: '0 0 0 10px' }}>
                         Retry
                     </Button>
                 </Box>
