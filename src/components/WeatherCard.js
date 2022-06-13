@@ -1,4 +1,5 @@
 import React from "react";
+import { Typography } from "@mui/material";
 
 export default function WeatherCard({date,icon,fetched,cityName,description,max_temp,min_temp}) {
 
@@ -12,10 +13,10 @@ export default function WeatherCard({date,icon,fetched,cityName,description,max_
                     `${icon}@2x.png`}
                 alt="weather-desc-icon"
                 className="weather-icon" />}
-            <h3>{cityName}</h3>
-            <p>{description}</p>
+            <h3><Typography>{cityName}</Typography></h3>
+            <p><Typography>{description}</Typography></p>
             <span className="temp">{max_temp}°C</span><span className="temp">/ {min_temp}°C</span>
-            <h2>{day[dateInJS.getDay()]}</h2>
+            <h2><Typography>{day[dateInJS.getDay()]}</Typography></h2>
         </div>
     )
 }
