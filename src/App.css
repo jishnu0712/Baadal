@@ -70,9 +70,8 @@ html,body {
   width: 60%;
   min-width: 75px;
 }
-nav-input:focus{
-  border:2px solid red;
-}
+/* //fix */
+
 .nav-search-btn {
   background-color: #fdfdfd;
   border-radius: 2px;
