@@ -161,14 +161,15 @@ main{
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 20px;
-  padding: 0 10px;
+  padding: 10px 10px;
   min-width: 150px;
+  min-height: 300px;
   font-size: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 10px 10px;
-  justify-content: center;
+  justify-content:space-evenly;
 
   transition: 0.3s;
   text-align: center;

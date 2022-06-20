@@ -1,11 +1,10 @@
 import React from "react";
-import { Typography } from "@mui/material";
 
-export default function WeatherCard({date,icon,fetched,cityName,description,max_temp,min_temp}) {
+export default function WeatherCard({ date, icon, fetched, cityName, description, max_temp, min_temp }) {
 
     let dateInJS = new Date((date) * 1000);
-    const day = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-
+    var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    console.log(dateInJS.toLocaleDateString("en-in",options))
     return (
         <div className="weather-card">
             {fetched && <img
@@ -13,10 +12,10 @@ export default function WeatherCard({date,icon,fetched,cityName,description,max_
                     `${icon}@2x.png`}
                 alt="weather-desc-icon"
                 className="weather-icon" />}
-            <h3><Typography>{cityName}</Typography></h3>
-            <p><Typography>{description}</Typography></p>
-            <span className="temp">{max_temp}°C</span><span className="temp">/ {min_temp}°C</span>
-            <h2><Typography>{day[dateInJS.getDay()]}</Typography></h2>
+            <p><strong>{cityName}</strong></p>
+            <h6>{description}</h6>
+            <span className="temp">{max_temp}°C / {min_temp}°C</span>
+            <p><em>{dateInJS.toLocaleDateString("en-in",options)}</em></p>
         </div>
     )
 }
