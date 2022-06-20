@@ -8,21 +8,24 @@
 * {
   box-sizing: border-box;
 }
-html,body {
-  height: 100vh;
+
+html,
+body {
+  height: 100%;
   margin: 0;
-  background-color: black;
   font-family: "Inter", sans-serif;
 }
-.root{
-  height: 100%;
-  }
-  .AppCompo{
-    height: 100vh;
-  }
+
+main{
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+}
 .canvas {
+  /* height: 100%; */
+  flex-grow: 1;
+  width: 100%;
   background-color: #ccc;
-  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -62,7 +65,6 @@ html,body {
   min-width: 150px;
 }
 .nav-input {
-  
   border-radius: 2px;
   padding: 10px 5px;
   font-family: "Inter", sans-serif;
@@ -70,7 +72,7 @@ html,body {
   width: 60%;
   min-width: 75px;
 }
-/* //fix */
+
 
 .nav-search-btn {
   background-color: #fdfdfd;
@@ -144,11 +146,10 @@ html,body {
 /*  weather component */
 .weather-container {
   background-color: #ccc;
-  min-height: 100vh;
+  flex-grow: 1;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-
   flex-wrap: wrap;
 }
 /* On mouse-over, add a deeper shadow */

@@ -1,18 +1,6 @@
 import React from "react";
 import WeatherCard from "./WeatherCard";
-import { Button, Modal, Box, Typography } from '@mui/material/';
-
-const style = { //modal style
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: 300,
-    bgcolor: 'background.paper',
-    border: '2px solid #000',
-    boxShadow: 24,
-    p: 4,
-};
+import ModalComponent from "./ModalComponent";
 
 const apiKey = "323eecb3b884f86eae937878ae160d27";
 
@@ -100,28 +88,7 @@ export default function Weather({ city, resetStates }) {
 
     return (
         <div className="weather-container">
-            <Modal
-                open={weatherData.error}
-                onClose={resetStates}
-                aria-labelledby="modal-modal-title"
-                aria-describedby="modal-modal-description"
-            >
-                <Box sx={style}>
-                    <Typography id="modal-modal-title" variant="h6" component="h2">
-                        Oops!
-                    </Typography>
-
-                    {weatherData.errorMsg}
-
-                    <Button
-                        variant="outlined"
-                        color="primary"
-                        onClick={resetStates}
-                        sx={{ color: "orange", m: '0 0 0 10px' }}>
-                        Retry
-                    </Button>
-                </Box>
-            </Modal>
+            <ModalComponent resetStates={resetStates} weatherData={weatherData}/>
             {weatherData.loader && <div className="loader"></div>}
             {!weatherData.loader && dailyWeatherWidget}
         </div>

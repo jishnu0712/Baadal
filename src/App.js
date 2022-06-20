@@ -31,7 +31,7 @@ export default function App() {
   }
 
   return (
-    <div className='AppCompo'>
+    <main>
       <Navbar
         handleClick={handleNavLogoClick}
         showWeather={city.showWeather}
@@ -48,6 +48,6 @@ export default function App() {
       />}
 
       {city.showWeather && <Weather city={city.cityName} resetStates={resetStates} />}
-    </div>
+    </main>
   );
 }

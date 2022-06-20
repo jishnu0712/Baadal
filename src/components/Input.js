@@ -3,9 +3,8 @@ import { Button } from '@mui/material';
 
 export default function Input(props) {
     return (
-        <div className={"canvas"}>
-            <div className={"form-input"}
-            >
+        <div className="canvas">
+            <div className="form-input">
                 <input
                     className="main-input"
                     type="text"
