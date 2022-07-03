@@ -1,0 +1,26 @@
+.nav-brand {
+  display: flex;
+  align-items: baseline;
+  margin-left: 2vw;
+}
+.nav-brand:hover {
+  cursor: pointer;
+}
+.logo {
+  margin: 0 8px 0 0;
+  font-size: 1.5rem;
+  padding: 0;
+}
+.nav-title {
+  font-family: "Permanent Marker", cursive;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.search-bar {
+  display: flex;
+  margin-right: 2vw;
+  width: 15%;
+  min-width: 150px;
+  justify-content: space-evenly;
+}

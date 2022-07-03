@@ -16,7 +16,7 @@ body {
   font-family: "Inter", sans-serif;
 }
 
-main{
+main {
   height: 100vh;
   display: flex;
   flex-flow: column;
@@ -31,54 +31,6 @@ main{
   justify-content: center;
   margin: auto;
   text-align: center;
-}
-/* navbar */
-.Navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  height: 65px;
-  background-color: var(--dark);
-  color: white;
-  padding: 15px 20px;
-}
-.nav-brand {
-  display: flex;
-  align-items: center;
-  margin-left: 10px;
-}
-.nav-brand:hover {
-  cursor: pointer;
-}
-.logo {
-  margin: 0 8px 0 0;
-  font-size: 1.5rem;
-  padding: 0;
-}
-.nav-title {
-  font-family: "Permanent Marker", cursive;
-  font-size: 1.5rem;
-}
-.search-bar {
-  width: 15%;
-  min-width: 150px;
-}
-.nav-input {
-  border-radius: 2px;
-  padding: 10px 5px;
-  font-family: "Inter", sans-serif;
-  margin: 5px;
-  width: 60%;
-  min-width: 75px;
-}
-
-
-.nav-search-btn {
-  background-color: #fdfdfd;
-  border-radius: 2px;
-  padding: 8px 5px;
-  margin: 5px;
 }
 
 /* Input component */
@@ -162,18 +114,19 @@ main{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   padding: 10px 10px;
-  min-width: 150px;
-  min-height: 300px;
-  font-size: 12px;
+  min-width: fit-content;
+  width: 10vw;
+  max-width: 250px;
+  height: 300px;
+  margin: 10px 1vw;
+  font-size: .75rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 10px 10px;
-  justify-content:space-evenly;
-
+  align-content: center;
+  justify-content: space-evenly;
   transition: 0.3s;
   text-align: center;
-  width: 10%;
 }
 .temp {
   font-size: 1rem;
