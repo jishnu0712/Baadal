@@ -15,7 +15,7 @@ export default function Input(props) {
                     autoComplete="off"
                 />
                 <button
-                    className="btn btn-primary"
+                    className="btn btn-warning"
                     onClick={props.handleSubmit}
                 >Get Weather</button>
             </div>
