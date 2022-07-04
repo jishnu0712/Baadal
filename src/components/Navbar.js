@@ -3,7 +3,7 @@ import "./Navbar.css"
 
 export default function Navbar(props) {
     return (
-        <nav class="navbar navbar-dark bg-dark justify-content-between">
+        <nav className="navbar navbar-dark bg-dark justify-content-between">
             <div className="nav-brand" onClick={props.handleClick}>
                 <h1 className="logo">☁️</h1>
                 <h3 className="nav-title">Baadal</h3>

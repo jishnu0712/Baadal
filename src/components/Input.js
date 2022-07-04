@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from '@mui/material';
 
 export default function Input(props) {
     return (
@@ -15,10 +14,10 @@ export default function Input(props) {
                     required
                     autoComplete="off"
                 />
-                <Button
-                    variant='contained'
+                <button
+                    className="btn btn-primary"
                     onClick={props.handleSubmit}
-                >Get Weather</Button>
+                >Get Weather</button>
             </div>
         </div>
     )

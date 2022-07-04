@@ -88,7 +88,7 @@ export default function Weather({ city, resetStates }) {
 
     return (
         <div className="weather-container">
-            <ModalComponent resetStates={resetStates} weatherData={weatherData}/>
+            {<ModalComponent resetStates={resetStates} weatherData={weatherData} />}
             {weatherData.loader && <div className="loader"></div>}
             {!weatherData.loader && dailyWeatherWidget}
         </div>
