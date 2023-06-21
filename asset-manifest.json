@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Baadal/static/css/main.9fc380c4.css",
+    "main.js": "/Baadal/static/js/main.d5509223.js",
+    "static/media/mt_fuji.jpeg": "/Baadal/static/media/mt_fuji.3812258d673faa27bdc9.jpeg",
+    "index.html": "/Baadal/index.html",
+    "main.9fc380c4.css.map": "/Baadal/static/css/main.9fc380c4.css.map",
+    "main.d5509223.js.map": "/Baadal/static/js/main.d5509223.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9fc380c4.css",
+    "static/js/main.d5509223.js"
+  ]
+}
